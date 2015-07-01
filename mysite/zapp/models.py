@@ -79,8 +79,7 @@ class Post(models.Model):
 	#email
 	email_post = models.EmailField(max_length=254,default='')
 	
-	def __unicode__(self):
-		return self.id
+
 
 
 

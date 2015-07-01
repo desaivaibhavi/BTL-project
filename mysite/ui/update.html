@@ -33,27 +33,26 @@
 	  <table class="table">
 	    <thead>
 	      <tr>
-	        <th>Firstname</th>
-	        <th>Lastname</th>
-	        <th>Email</th>
+	        <th>Request</th>
+	        <th>Action</th>
+	        <th>Stock Available</th>
+	        <th>Stock Requested</th>
 	      </tr>
 	    </thead>
 	    <tbody>
+	    {% for post in all_post%}
 	      <tr>
-	        <td>John</td>
-	        <td>Doe</td>
-	        <td>john@example.com</td>
+	        <td>Request {{post.id}} on {{post.created}}</td>
+	        <td>View &nbsp; Edit</td>
+	        {% for specs in all_specs %}
+	        	{% if specs.id == post.specs_post.id %}
+	        	<td>{{specs.specs_qty}}</td>
+	        	{% endif %}
+	        {% endfor %}
+	        <td>{{post.qty_post}}</td>
 	      </tr>
-	      <tr>
-	        <td>Mary</td>
-	        <td>Moe</td>
-	        <td>mary@example.com</td>
-	      </tr>
-	      <tr>
-	        <td>July</td>
-	        <td>Dooley</td>
-	        <td>july@example.com</td>
-	      </tr>
+	    {% endfor %}
+
 	    </tbody>
 	  </table>
 	</div>

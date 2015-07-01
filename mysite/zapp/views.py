@@ -58,12 +58,9 @@ def post_new(request):
 
 #Calls index page
 def update(request):
-	all_cities = City.objects.all()
-	all_lang = Language.objects.all()
-	all_rtype = Rtype.objects.all()
-	all_BTL = BTL.objects.all()
-	all_item = item.objects.all()
+	all_post = Post.objects.all()
 	all_specs = specs.objects.all()
-	return HttpResponse(jinja_environ.get_template('update.html').render({"all_cities":all_cities,"all_lang":all_lang,"all_rtype":all_rtype,"all_BTL":all_BTL,"all_item":all_item,"all_specs":all_specs}))
+	
+	return HttpResponse(jinja_environ.get_template('update.html').render({"all_post":all_post,"all_specs":all_specs}))
 
 
