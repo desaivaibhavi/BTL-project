@@ -74,3 +74,10 @@ def update(request):
 	return HttpResponse(jinja_environ.get_template('update.html').render({"all_post":all_post,"all_specs":all_specs}))
 
 
+#Calls the edit post page. Also, sends the autofill form data.    
+def edit_post_page(request):
+    key=request.REQUEST['key']
+    postobj=Post.objects.get(id=key)
+    
+    return HttpResponse(jinja_environ.get_template('editpost.html').render({'post':postobj}))
+    
