@@ -42,8 +42,8 @@
 	    <tbody>
 	    {% for post in all_post%}
 	      <tr>
-	        <td>Request {{post.id}} on {{post.created}}</td>
-	        <td>View &nbsp; Edit</td>
+	        <td>Request {{post.id}} on {{ post.created.strftime('%Y-%m-%d') }}</td>
+	        <td><a>View</a> &nbsp; Edit</td>
 	        {% for specs in all_specs %}
 	        	{% if specs.id == post.specs_post.id %}
 	        	<td>{{specs.specs_qty}}</td>

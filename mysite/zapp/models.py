@@ -67,9 +67,9 @@ class Post(models.Model):
 	#field to note the timestamp when the post was last updated
 	updated = models.DateTimeField(auto_now=True)
 	#BTL
-	BTLtype_post = models.ForeignKey(BTL, related_name='BTLtype_post')
+	# BTLtype_post = models.ForeignKey(BTL, related_name='BTLtype_post')
 	#item
-	item_post = models.ForeignKey(item, related_name='item_post', default='')
+	# item_post = models.ForeignKey(item, related_name='item_post', default='')
 	#specs
 	specs_post = models.ForeignKey(specs, related_name='specs_post', default='')
 	#rtype
