@@ -78,7 +78,14 @@ class Post(models.Model):
 	qty_post = models.IntegerField(default=0)
 	#email
 	email_post = models.EmailField(max_length=254,default='')
-	
+
+class Upost(models.Model):
+	#post asscociated
+	post_upost = models.ForeignKey(Post, related_name='post_upost', default='')
+	#comment
+	comment_upost = models.CharField(max_length=2000, default='')
+	#status of the post
+	status_upost = models.IntegerField(default=0)
 
 
 
