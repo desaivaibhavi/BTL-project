@@ -56,6 +56,16 @@ def post_new(request):
 	entry.save()
 	return HttpResponse(jinja_environ.get_template('notice.html').render({"text":'Post created successfully.'}))
 
+
+#called when a user wants to view a particular post. Also shows up the revision history
+def view_post(request):
+    key=request.REQUEST['key']
+    postobj=Post.objects.get(id=key)
+        
+    return HttpResponse(jinja_environ.get_template('viewpost.html').render({'post':postobj}))
+ 
+
+
 #Calls index page
 def update(request):
 	all_post = Post.objects.all()

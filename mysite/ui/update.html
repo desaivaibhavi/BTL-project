@@ -30,6 +30,12 @@
    
 	<div class="container">
 	  <h2><center>BTL : Updates</center></h2><br>
+
+	{%if all_post|length ==0 %}
+        <center>There are No Posts right now.</center>
+    {% else %}
+
+
 	  <table class="table">
 	    <thead>
 	      <tr>
@@ -43,7 +49,7 @@
 	    {% for post in all_post%}
 	      <tr>
 	        <td>Request {{post.id}} on {{ post.created.strftime('%Y-%m-%d') }}</td>
-	        <td><a>View</a> &nbsp; Edit</td>
+	        <td><a href="/view_post/?key={{post.id}}">View</a> &nbsp; Edit</td>
 	        {% for specs in all_specs %}
 	        	{% if specs.id == post.specs_post.id %}
 	        	<td>{{specs.specs_qty}}</td>
@@ -55,6 +61,8 @@
 
 	    </tbody>
 	  </table>
+	 {% endif %}
+
 	</div>
 
 	
