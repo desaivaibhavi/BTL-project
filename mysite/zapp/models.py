@@ -42,6 +42,26 @@ class specs(models.Model):
 
 class specs_order(models.Model):
 	#each item will have a provision to be selected
+
+	specs_org_1 = models.ForeignKey(specs, related_name='specs_org_1',default='')
+	specs_org_2 = models.ForeignKey(specs, related_name='specs_org_2',default='')
+	specs_org_3 = models.ForeignKey(specs, related_name='specs_org_3',default='')
+	specs_org_4 = models.ForeignKey(specs, related_name='specs_org_4',default='')
+	specs_org_5 = models.ForeignKey(specs, related_name='specs_org_5',default='')
+	specs_org_6 = models.ForeignKey(specs, related_name='specs_org_6',default='')
+	specs_org_7 = models.ForeignKey(specs, related_name='specs_org_7',default='')
+	specs_org_8 = models.ForeignKey(specs, related_name='specs_org_8',default='')
+	specs_org_9 = models.ForeignKey(specs, related_name='specs_org_9',default='')
+	specs_org_10 = models.ForeignKey(specs, related_name='specs_org_10',default='')
+	specs_org_11 = models.ForeignKey(specs, related_name='specs_org_11',default='')
+	specs_org_12 = models.ForeignKey(specs, related_name='specs_org_12',default='')
+	specs_org_13 = models.ForeignKey(specs, related_name='specs_org_13',default='')
+	specs_org_14 = models.ForeignKey(specs, related_name='specs_org_14',default='')
+	specs_org_15 = models.ForeignKey(specs, related_name='specs_org_15',default='')
+	specs_org_16 = models.ForeignKey(specs, related_name='specs_org_16',default='')
+	specs_org_17 = models.ForeignKey(specs, related_name='specs_org_17',default='')
+	specs_org_18 = models.ForeignKey(specs, related_name='specs_org_18',default='')
+
 	specs_1 = models.BooleanField(default=False)
 	specs_2 = models.BooleanField(default=False)
 	specs_3 = models.BooleanField(default=False)

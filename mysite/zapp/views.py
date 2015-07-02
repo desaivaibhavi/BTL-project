@@ -26,7 +26,8 @@ def index(request):
 	all_BTL = BTL.objects.all()
 	all_item = item.objects.all()
 	all_specs = specs.objects.all()
-	return HttpResponse(jinja_environ.get_template('index.html').render({"all_cities":all_cities,"all_lang":all_lang,"all_rtype":all_rtype,"all_BTL":all_BTL,"all_item":all_item,"all_specs":all_specs}))
+	all_specs_order = specs_order.objects.all()
+	return HttpResponse(jinja_environ.get_template('index.html').render({"all_cities":all_cities,"all_specs_order":all_specs_order,"all_lang":all_lang,"all_rtype":all_rtype,"all_BTL":all_BTL,"all_item":all_item,"all_specs":all_specs}))
 
 #Called when a user clicks submit on new post form.    
 @csrf_exempt                                                                      
