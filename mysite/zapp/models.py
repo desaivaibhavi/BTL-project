@@ -40,6 +40,49 @@ class specs(models.Model):
 	def __unicode__(self):
 		return self.specs_name
 
+class specs_order(models.Model):
+	#each item will have a provision to be selected
+	specs_1 = models.BooleanField(default=False)
+	specs_2 = models.BooleanField(default=False)
+	specs_3 = models.BooleanField(default=False)
+	specs_4 = models.BooleanField(default=False)
+	specs_5 = models.BooleanField(default=False)
+	specs_6 = models.BooleanField(default=False)
+	specs_7 = models.BooleanField(default=False)
+	specs_8 = models.BooleanField(default=False)
+	specs_9 = models.BooleanField(default=False)
+	specs_10 = models.BooleanField(default=False)
+	specs_11 = models.BooleanField(default=False)
+	specs_12 = models.BooleanField(default=False)
+	specs_13 = models.BooleanField(default=False)
+	specs_14 = models.BooleanField(default=False)
+	specs_15 = models.BooleanField(default=False)
+	specs_16 = models.BooleanField(default=False)
+	specs_17 = models.BooleanField(default=False)
+	specs_18 = models.BooleanField(default=False)
+
+	specs_1_qty = models.IntegerField(default=0)
+	specs_2_qty = models.IntegerField(default=0)
+	specs_3_qty = models.IntegerField(default=0)
+	specs_4_qty = models.IntegerField(default=0)
+	specs_5_qty = models.IntegerField(default=0)
+	specs_6_qty = models.IntegerField(default=0)
+	specs_7_qty = models.IntegerField(default=0)
+	specs_8_qty = models.IntegerField(default=0)
+	specs_9_qty = models.IntegerField(default=0)
+	specs_10_qty = models.IntegerField(default=0)
+	specs_11_qty = models.IntegerField(default=0)
+	specs_12_qty = models.IntegerField(default=0)
+	specs_13_qty = models.IntegerField(default=0)
+	specs_14_qty = models.IntegerField(default=0)
+	specs_15_qty = models.IntegerField(default=0)
+	specs_16_qty = models.IntegerField(default=0)
+	specs_17_qty = models.IntegerField(default=0)
+	specs_18_qty = models.IntegerField(default=0)
+
+
+
+
 class Language(models.Model):
 	#name
 	lang_name = models.CharField(max_length=300)
@@ -70,12 +113,12 @@ class Post(models.Model):
 	# BTLtype_post = models.ForeignKey(BTL, related_name='BTLtype_post')
 	#item
 	# item_post = models.ForeignKey(item, related_name='item_post', default='')
-	#specs
-	specs_post = models.ForeignKey(specs, related_name='specs_post', default='')
+	#specs ordered for the post
+	specs_post = models.ForeignKey(specs_order, related_name='specs_post', default='')
 	#rtype
 	rtype_post = models.ForeignKey(Rtype, related_name='rtype_post')
 	#requested quantity
-	qty_post = models.IntegerField(default=0)
+	# qty_post = models.IntegerField(default=0)
 	#email
 	email_post = models.EmailField(max_length=254,default='')
 

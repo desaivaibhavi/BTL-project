@@ -10,6 +10,8 @@ from .models import BTL
 from .models import item
 from .models import specs
 from .models import Upost
+from .models import specs_order
+
 
 admin.site.register(City)
 admin.site.register(Post)
@@ -19,3 +21,4 @@ admin.site.register(BTL)
 admin.site.register(item)
 admin.site.register(specs)
 admin.site.register(Upost)
+admin.site.register(specs_order)
