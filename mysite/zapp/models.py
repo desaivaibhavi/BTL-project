@@ -87,6 +87,9 @@ class Upost(models.Model):
 	#status of the post
 	status_upost = models.IntegerField(default=0)
 
+	def __unicode__(self):
+		return self.post_upost.email_post
+
 
 
 

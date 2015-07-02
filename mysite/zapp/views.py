@@ -59,10 +59,10 @@ def post_new(request):
 
 #called when a user wants to view a particular post. Also shows up the revision history
 def view_post(request):
-    key=request.REQUEST['key']
-    postobj=Post.objects.get(id=key)
-        
-    return HttpResponse(jinja_environ.get_template('viewpost.html').render({'post':postobj}))
+	key=request.REQUEST['key']
+	postobj=Post.objects.get(id=key)
+		
+	return HttpResponse(jinja_environ.get_template('viewpost.html').render({'post':postobj}))
  
 
 
@@ -76,8 +76,31 @@ def update(request):
 
 #Calls the edit post page. Also, sends the autofill form data.    
 def edit_post_page(request):
-    key=request.REQUEST['key']
-    postobj=Post.objects.get(id=key)
-    
-    return HttpResponse(jinja_environ.get_template('editpost.html').render({'post':postobj}))
-    
+	key=request.REQUEST['key']
+	postobj=Post.objects.get(id=key)
+	
+	return HttpResponse(jinja_environ.get_template('editpost.html').render({'post':postobj}))
+	
+
+
+#Called when a user edits his/her post 
+@csrf_exempt
+def edit_post(request):
+	
+	key = request.REQUEST['key']
+	postobj = Post.objects.get(id=key)
+
+	
+	comment_upost = request.REQUEST['comment']
+	status_upost = request.REQUEST['status']
+	
+	entry = Upost(post_upost=postobj, 
+				comment_upost=comment_upost,
+				status_upost=status_upost,
+		)
+	entry.save()    
+			
+
+	return HttpResponse(jinja_environ.get_template('notice.html').render({"text":'Post edited successfully.','post':postobj}))
+
+
