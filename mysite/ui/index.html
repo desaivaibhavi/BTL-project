@@ -83,8 +83,28 @@
 			{% endfor %}
 		</select> <br>
 		<br><br> -->
+			
 	
+		<div style="border:1px solid black; padding:25px;">
 
+		{% for btl in all_BTL %}
+			<u><h3>{{btl.BTL_name}}</h3></u> <br>
+
+			{% for item in all_item %}
+				{% if item.item_BTL.id == btl.id %}
+					<b>{{item.item_name}}</b> <br>
+						{% for specs in all_specs %}
+							{% if specs.specs_item.id == item.id %}
+								&nbsp;&nbsp;{{specs.specs_name}} <br>
+							{% endif %}
+						{% endfor %}
+						
+				{% endif %}
+			{% endfor %} <br>
+		{% endfor %} 
+
+		</div> <br>
+<!--
 		<label class="collapse" for="_1"><font size="3"><a>1. User</a></font></label>
 		<input id="_1" type="checkbox" name="BTLtype">
 		<div>
@@ -112,8 +132,7 @@
 				</div>
 
 
-				<!-- <input type="radio" name="item" value="{{item.item_name}}">{{item.item_name}}<br>
- -->
+
 				{% endif %}
 			{% endfor %}
 			<br><br>
@@ -123,13 +142,7 @@
   
 		 <label class="collapse" for="_2"><font size="3"><a>2. Merchant</a></font></label>
 		 <input id="_2" type="checkbox" name="BTLtype">
-		 <!-- <div>
-		 	{% for item in all_item %}
-				{% if item.item_BTL.id == 2 %}
-				<input type="radio" name="item" value="{{item.item_name}}">{{item.item_name}}<br>
-				{% endif %}
-			{% endfor %}
-		 </div> -->
+		
 		 <div>
 			{% for item in all_item %}
 				{% if item.item_BTL.id == 2 %}
@@ -155,9 +168,7 @@
 				</div>
 
 
-				<!-- <input type="radio" name="item" value="{{item.item_name}}">{{item.item_name}}<br>
- -->
-				{% endif %}
+			{% endif %}
 			{% endfor %}
 			<br><br>
 			
@@ -166,13 +177,7 @@
 
 		 <label class="collapse" for="_3"><font size="3"><a>3. Zoman</a></font></label>
 		 <input id="_3" type="checkbox" name="BTLtype">
-		 <!-- <div>
-		 	{% for item in all_item %}
-				{% if item.item_BTL.id == 3 %}
-				<input type="radio" name="item" value="{{item.item_name}}">{{item.item_name}}<br>
-				{% endif %}
-			{% endfor %}
-		 </div> -->
+	
 
 		 <div>
 			{% for item in all_item %}
@@ -199,9 +204,7 @@
 				</div>
 
 
-				<!-- <input type="radio" name="item" value="{{item.item_name}}">{{item.item_name}}<br>
- -->
-				{% endif %}
+			{% endif %}
 			{% endfor %}
 			<br><br>
 			
@@ -209,7 +212,7 @@
 		</div>
 
 		<br>
-
+-->
 		
 		Quantity of packages
 		<label for="inputQty" class="sr-only">Reqd Quantity</label><br>
